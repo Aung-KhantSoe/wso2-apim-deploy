@@ -593,8 +593,8 @@ wso2:
     image:
       imagePullSecrets:
         enabled: false   # unless you use a private registry
-      registry: docker.io
-      repository: wso2/wso2am
+      registry: "docker.io"
+      repository: "wso2/wso2am"
       digest: "sha256:e42e5d2c922e2baa4073a9a13458038281f7753f594a87bd3fee75464e254bcb"        # leave empty if using tag
       imagePullPolicy: IfNotPresent
 
