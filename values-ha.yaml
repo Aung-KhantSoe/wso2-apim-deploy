@@ -590,24 +590,13 @@ wso2:
         organization_id_local_claim: "http://wso2.org/claims/organizationId" 
 
   deployment:
-    # Confgiure High Availability
-    highAvailability: true
-    # Container image configurations
     image:
-      # -- Container registry credentials.
-      # Specify image pull secrets for private registries
       imagePullSecrets:
-        enabled: false
-        username: ""
-        password: ""
-      # -- Container registry hostname
-      registry: "<DOCKER_REGISTRY>"
-      # -- Azure ACR repository name consisting the image
-      repository: "<GW_DOCKER_IMAGE>"
-      # -- Docker image digest
-      digest: "<GW_IMAGE_DIGEST>"
-      # -- Refer to the Kubernetes documentation on updating images (https://kubernetes.io/docs/concepts/containers/images/#updating-images)
-      imagePullPolicy: Always
+        enabled: false   # unless you use a private registry
+      registry: docker.io
+      repository: wso2/wso2am
+      digest: "sha256:e42e5d2c922e2baa4073a9a13458038281f7753f594a87bd3fee75464e254bcb"        # leave empty if using tag
+      imagePullPolicy: IfNotPresent
 
     resources:
       # These are the resource recommendations for running WSO2 API Management product profiles with profile optimization
