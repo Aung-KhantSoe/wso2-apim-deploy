@@ -1,0 +1,11 @@
+apiVersion: v2
+name: wso2-apim-deploy
+description: WSO2 API Manager GitOps deployment (self-contained)
+type: application
+version: 0.1.0
+appVersion: "4.5.0"
+dependencies:
+  - name: wso2am-all-in-one
+    version: 4.5.0-3
+    repository: "file://charts"
+
