@@ -590,16 +590,22 @@ wso2:
         organization_id_local_claim: "http://wso2.org/claims/organizationId"
   
   deployment:
-  image:
-    imagePullSecrets:
-      enabled: false
-      username: ""
-      password: ""
-    registry: "docker.io"
-    repository: "wso2/wso2am"
-    tag: "4.5.0"
-    digest: "sha256:e42e5d2c922e2baa4073a9a13458038281f7753f594a87bd3fee75464e254bcb"
-    imagePullPolicy: Always
+    # Container image configurations
+    image:
+      # -- Container registry credentials.
+      # Specify image pull secrets for private registries
+      imagePullSecrets:
+        enabled: false
+        username: ""
+        password: ""
+      # -- Registry containing the image
+      registry: "docker.io"
+      # -- Repository name consisting the image
+      repository: "wso2/wso2am:4.5.0"
+      # -- Docker image digest
+      digest: "sha256:e42e5d2c922e2baa4073a9a13458038281f7753f594a87bd3fee75464e254bcb"
+      # -- Refer to the Kubernetes documentation on updating images (https://kubernetes.io/docs/concepts/containers/images/#updating-images)
+      imagePullPolicy: Always
 
 
     resources:
